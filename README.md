@@ -9,7 +9,7 @@
 ## 개발환경
 
 - IDE : Eclipse 2023 버전
-- JDK : ~~
+- JDK : 1.6
 - Tomcat : 9.0
 
 ## 실행 방법
