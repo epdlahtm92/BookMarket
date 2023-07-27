@@ -1,5 +1,7 @@
 package com.kopo.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class Book {
 	
 	private String bookId;
@@ -12,6 +14,7 @@ public class Book {
 	private long unitsInStock;
 	private String releaseDate;
 	private String condition;
+	private MultipartFile bookImage;
 	private String imgPath;
 	
 	public Book() {
@@ -19,7 +22,7 @@ public class Book {
 		// TODO Auto-generated constructor stub
 	}
 
-	//ÀÏ¹Ý»ý¼ºÀÚ
+	//ï¿½Ï¹Ý»ï¿½ï¿½ï¿½ï¿½ï¿½
 	public Book(String bookId, String name, String unitPrice, String imgPath) {
 		super();
 		this.bookId = bookId;
@@ -28,7 +31,7 @@ public class Book {
 		this.imgPath = imgPath;
 	}
 
-	//°ÔÅÍ ¼¼ÅÍ
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public String getBookId() {
 		return bookId;
 	}
@@ -115,6 +118,14 @@ public class Book {
 
 	public void setImgPath(String imgPath) {
 		this.imgPath = imgPath;
+	}
+
+	public MultipartFile getBookImage() {
+		return bookImage;
+	}
+
+	public void setBookImage(MultipartFile bookImage) {
+		this.bookImage = bookImage;
 	}
 	
 	

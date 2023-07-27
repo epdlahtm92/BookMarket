@@ -12,8 +12,8 @@
 	<nav class="navbar navbar-expand navbar-dark bg-dark">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="./home">Home</a> <a
-					class="navbar-brand" href="./home">게시판</a> <a class="navbar-brand"
+				<a class="navbar-brand" href="./all">Home</a> <a
+					class="navbar-brand" href="./all">게시판</a> <a class="navbar-brand"
 					href="./home">쇼핑몰</a>
 			</div>
 		</div>
@@ -26,7 +26,12 @@
 	</div>
 
 	<div class="container">
-		<form:form modelAttribute="NewBook" class="form-horizontal" method="post">
+			<div class="float-right">
+				<form:form action="${ pageContext.request.contextPath }/logout" method="post">
+					<input type="submit" class="btn btn-sm btn-success" value="logout">
+				</form:form>
+			</div>
+		<form:form modelAttribute="NewBook" action="./add?{_csrf.parameterName }={_csrf.token }" class="form-horizontal" method="post">
 			<fieldset>
 			<legend>${ addTitle }</legend>
 			<div class="form-group row">
@@ -89,6 +94,12 @@
 					<form:radiobutton path="condition" value="new" /> new
 					<form:radiobutton path="condition" value="old" /> old
 					<form:radiobutton path="condition" value="e-Book" /> e-Book
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2 control-label">도서 이미지</label>
+				<div class="col -sm-7">
+					<form:input path="bookImage" type="file" class="form-control" />
 				</div>
 			</div>
 			<div class="form-group row">

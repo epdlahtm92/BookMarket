@@ -26,7 +26,7 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="co -md-12">
+				<div class="co -md- 8" style="margin-right:50px;">
 					<h3>${ book.name }</h3>
 					<p>${ book.description }
 					<p><b>도서코드 : </b><span class="badge badge-info">${ book.bookId }</span>
@@ -39,6 +39,17 @@
 					<br />
 					<p><a href="#" class="btn btn-primary">도서주문 &raquo;</a>
 					<a href="<c:url value="/books"/>"class="btn btn-secondary">도서 목록 &raquo;</a>
+				</div>
+				<div class="co -md-4">
+					<c:choose>
+						<c:when test="${ book.getBookImage() == null }">
+							<img src="<c:url value='C:\03StringWorkspace\BookMarket\src\main\webapp\resources\img\${ book.bookImage() }'/>" style="width:100%;"/>
+						</c:when>
+						<c:otherwise>
+							<img src="<c:url value='C:\03StringWorkspace\BookMarket\src\main\webapp\resources\img\${ book.getOriginalFileName }'/>" style="width:100%;"/>
+						</c:otherwise>
+					</c:choose>
+					<img src=${ pageContext.request.contextPath }/resources/img/${ book.imgPath } />
 				</div>
 			</div>
 		</div>
